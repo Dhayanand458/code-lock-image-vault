@@ -90,6 +90,11 @@ export const BackgroundPage: React.FC = () => {
     setShowCreatePopup(true);
   };
 
+  const createNewTemplate = () => {
+    setEditingTemplate(null);
+    setShowCreatePopup(true);
+  };
+
   const openImageManager = (templateIndex: number) => {
     setSelectedTemplateForImages(templateIndex);
     setShowImagePopup(true);
@@ -124,10 +129,7 @@ export const BackgroundPage: React.FC = () => {
         <div className="space-y-4">
           <div className="text-center">
             <button
-              onClick={() => {
-                setEditingTemplate(null);
-                setShowCreatePopup(true);
-              }}
+              onClick={createNewTemplate}
               className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600"
             >
               <Plus size={24} />
@@ -172,10 +174,7 @@ export const BackgroundPage: React.FC = () => {
               
               <div className="text-center">
                 <button
-                  onClick={() => {
-                    setEditingTemplate(null);
-                    setShowCreatePopup(true);
-                  }}
+                  onClick={createNewTemplate}
                   className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600"
                 >
                   <Plus size={20} />
